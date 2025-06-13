@@ -22,17 +22,17 @@ jobs:
         with:
           python-version: "3.x" # Adjust Python version as needed
 
-      # Install Poetry
+      # Install a specific version of Poetry
       - name: Install Poetry
         run: |
           python -m pip install --upgrade pip
-          pip install poetry
+          pip install poetry==1.8.2 # Pinning the version for consistency
 
-      # Regenerate lock file if necessary
+      # Ensure lockfile is up to date
       - name: Ensure lockfile is up to date
         run: |
-          if ! poetry lock --check; then
-            poetry lock --no-update
+          if ! poetry check --lock; then
+            poetry lock
           fi
 
       # Install dependencies
