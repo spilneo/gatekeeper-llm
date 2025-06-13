@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "gatekeeper-llm"
+version = "0.1.0"
+description = "A CLI tool to forge an AI to guard a secret answer, accessible only by a secret question."
+authors = ["S. Pilneo"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "gatekeeper" }]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+typer = { extras = ["rich"], version = "^0.12.3" }
+mlx-lm = ">=0.1.1"
+speechrecognition = "^3.10.4"
+openai = "^1.86.0"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.scripts]
+gatekeeper = "gatekeeper.cli:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

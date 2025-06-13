@@ -1,0 +1,11 @@
+GK*
+__pycache__
+.DS_Store
+.env
+venv/
+*.pyc
+*.log
+logs/
+dist/
+build/
+poetry.lock
